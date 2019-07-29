@@ -12,6 +12,11 @@
 		2F7C1BFD22CE082B009AB857 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7C1BFB22CE082B009AB857 /* Main.storyboard */; };
 		2F7C1BFF22CE082D009AB857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7C1BFE22CE082D009AB857 /* Assets.xcassets */; };
 		2F7C1C0222CE082D009AB857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7C1C0022CE082D009AB857 /* LaunchScreen.storyboard */; };
+		2F7C1C0F22CE5161009AB857 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F7C1C0E22CE5161009AB857 /* Default-568h@2x.png */; };
+		2F8A067E22EF409300285A79 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A067D22EF409300285A79 /* Scale.swift */; };
+		2F8A068022EF40F100285A79 /* Arpeggio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A067F22EF40F100285A79 /* Arpeggio.swift */; };
+		2F8A068222EF413C00285A79 /* Syllabus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068122EF413C00285A79 /* Syllabus.swift */; };
+		2F8A068422EF415C00285A79 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068322EF415C00285A79 /* Grade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +24,14 @@
 		2F7C1BF722CE082B009AB857 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7C1BF922CE082B009AB857 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F7C1BFC22CE082B009AB857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2F7C1BFE22CE082D009AB857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F7C1BFE22CE082D009AB857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		2F7C1C0122CE082D009AB857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F7C1C0322CE082D009AB857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F7C1C0E22CE5161009AB857 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2F8A067D22EF409300285A79 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
+		2F8A067F22EF40F100285A79 /* Arpeggio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arpeggio.swift; sourceTree = "<group>"; };
+		2F8A068122EF413C00285A79 /* Syllabus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syllabus.swift; sourceTree = "<group>"; };
+		2F8A068322EF415C00285A79 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +48,7 @@
 		2F7C1BEB22CE082B009AB857 = {
 			isa = PBXGroup;
 			children = (
+				2F7C1C0E22CE5161009AB857 /* Default-568h@2x.png */,
 				2F7C1BF622CE082B009AB857 /* ScaleBuddy */,
 				2F7C1BF522CE082B009AB857 /* Products */,
 			);
@@ -54,14 +65,50 @@
 		2F7C1BF622CE082B009AB857 /* ScaleBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				2F7C1BF722CE082B009AB857 /* AppDelegate.swift */,
-				2F7C1BF922CE082B009AB857 /* ViewController.swift */,
-				2F7C1BFB22CE082B009AB857 /* Main.storyboard */,
-				2F7C1BFE22CE082D009AB857 /* Assets.xcassets */,
-				2F7C1C0022CE082D009AB857 /* LaunchScreen.storyboard */,
-				2F7C1C0322CE082D009AB857 /* Info.plist */,
+				2F7C1C0C22CE5135009AB857 /* Model */,
+				2F7C1C0B22CE511A009AB857 /* View */,
+				2F7C1C0A22CE5109009AB857 /* Controller */,
+				2F7C1C0D22CE5141009AB857 /* Supporting Files */,
 			);
 			path = ScaleBuddy;
+			sourceTree = "<group>";
+		};
+		2F7C1C0A22CE5109009AB857 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F7C1BF722CE082B009AB857 /* AppDelegate.swift */,
+				2F7C1BF922CE082B009AB857 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F7C1C0B22CE511A009AB857 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F7C1BFB22CE082B009AB857 /* Main.storyboard */,
+				2F7C1C0022CE082D009AB857 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F7C1C0C22CE5135009AB857 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F8A067D22EF409300285A79 /* Scale.swift */,
+				2F8A067F22EF40F100285A79 /* Arpeggio.swift */,
+				2F8A068122EF413C00285A79 /* Syllabus.swift */,
+				2F8A068322EF415C00285A79 /* Grade.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F7C1C0D22CE5141009AB857 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F7C1BFE22CE082D009AB857 /* Assets.xcassets */,
+				2F7C1C0322CE082D009AB857 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7C1C0222CE082D009AB857 /* LaunchScreen.storyboard in Resources */,
+				2F7C1C0F22CE5161009AB857 /* Default-568h@2x.png in Resources */,
 				2F7C1BFF22CE082D009AB857 /* Assets.xcassets in Resources */,
 				2F7C1BFD22CE082B009AB857 /* Main.storyboard in Resources */,
 			);
@@ -136,7 +184,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7C1BFA22CE082B009AB857 /* ViewController.swift in Sources */,
+				2F8A067E22EF409300285A79 /* Scale.swift in Sources */,
 				2F7C1BF822CE082B009AB857 /* AppDelegate.swift in Sources */,
+				2F8A068222EF413C00285A79 /* Syllabus.swift in Sources */,
+				2F8A068022EF40F100285A79 /* Arpeggio.swift in Sources */,
+				2F8A068422EF415C00285A79 /* Grade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F6M783A3J;
-				INFOPLIST_FILE = ScaleBuddy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ScaleBuddy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F6M783A3J;
-				INFOPLIST_FILE = ScaleBuddy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ScaleBuddy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

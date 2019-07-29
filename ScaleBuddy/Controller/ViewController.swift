@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ChooseViewController: UIViewController {
+    
+    @IBOutlet weak var chosenKey: UILabel!
+    @IBOutlet weak var chosenInformation: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
