@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F7C1BF822CE082B009AB857 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7C1BF722CE082B009AB857 /* AppDelegate.swift */; };
-		2F7C1BFA22CE082B009AB857 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7C1BF922CE082B009AB857 /* ViewController.swift */; };
+		2F7C1BFA22CE082B009AB857 /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7C1BF922CE082B009AB857 /* ChooseViewController.swift */; };
 		2F7C1BFD22CE082B009AB857 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7C1BFB22CE082B009AB857 /* Main.storyboard */; };
 		2F7C1BFF22CE082D009AB857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7C1BFE22CE082D009AB857 /* Assets.xcassets */; };
 		2F7C1C0222CE082D009AB857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7C1C0022CE082D009AB857 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,8 @@
 		2F8A068022EF40F100285A79 /* Arpeggio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A067F22EF40F100285A79 /* Arpeggio.swift */; };
 		2F8A068222EF413C00285A79 /* Syllabus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068122EF413C00285A79 /* Syllabus.swift */; };
 		2F8A068422EF415C00285A79 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068322EF415C00285A79 /* Grade.swift */; };
+		2F8A068622F04C5F00285A79 /* GradeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068522F04C5F00285A79 /* GradeTableViewController.swift */; };
+		2F8A068822F075AF00285A79 /* ScalesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068722F075AF00285A79 /* ScalesTableViewController.swift */; };
 		A1B2F3F26F376757262C8976 /* Pods_ScaleBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C474C5B1B0870191DA9F679E /* Pods_ScaleBuddy.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +27,7 @@
 		15B34E7762A4C30A8D50C946 /* Pods-ScaleBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScaleBuddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScaleBuddy/Pods-ScaleBuddy.release.xcconfig"; sourceTree = "<group>"; };
 		2F7C1BF422CE082B009AB857 /* ScaleBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaleBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7C1BF722CE082B009AB857 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F7C1BF922CE082B009AB857 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F7C1BF922CE082B009AB857 /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
 		2F7C1BFC22CE082B009AB857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F7C1BFE22CE082D009AB857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		2F7C1C0122CE082D009AB857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +37,8 @@
 		2F8A067F22EF40F100285A79 /* Arpeggio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arpeggio.swift; sourceTree = "<group>"; };
 		2F8A068122EF413C00285A79 /* Syllabus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syllabus.swift; sourceTree = "<group>"; };
 		2F8A068322EF415C00285A79 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
+		2F8A068522F04C5F00285A79 /* GradeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeTableViewController.swift; sourceTree = "<group>"; };
+		2F8A068722F075AF00285A79 /* ScalesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesTableViewController.swift; sourceTree = "<group>"; };
 		C474C5B1B0870191DA9F679E /* Pods_ScaleBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaleBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,7 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				2F7C1BF722CE082B009AB857 /* AppDelegate.swift */,
-				2F7C1BF922CE082B009AB857 /* ViewController.swift */,
+				2F7C1BF922CE082B009AB857 /* ChooseViewController.swift */,
+				2F8A068522F04C5F00285A79 /* GradeTableViewController.swift */,
+				2F8A068722F075AF00285A79 /* ScalesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,9 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F7C1BFA22CE082B009AB857 /* ViewController.swift in Sources */,
+				2F7C1BFA22CE082B009AB857 /* ChooseViewController.swift in Sources */,
+				2F8A068622F04C5F00285A79 /* GradeTableViewController.swift in Sources */,
 				2F8A067E22EF409300285A79 /* Scale.swift in Sources */,
 				2F7C1BF822CE082B009AB857 /* AppDelegate.swift in Sources */,
+				2F8A068822F075AF00285A79 /* ScalesTableViewController.swift in Sources */,
 				2F8A068222EF413C00285A79 /* Syllabus.swift in Sources */,
 				2F8A068022EF40F100285A79 /* Arpeggio.swift in Sources */,
 				2F8A068422EF415C00285A79 /* Grade.swift in Sources */,
