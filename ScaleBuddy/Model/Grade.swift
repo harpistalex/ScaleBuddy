@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Grade {
+class Grade: Object {
     
-    var scaleList : Array<Scale> = []
-    var arpeggioList : Array<Arpeggio> = []
+    let scaleList = List<Scale>()
+    let arpeggioList = List<Arpeggio>()
+    var scalesToUse = List<Int>()
+    var arpeggiosToUse = List<Int>()
     
     func addScale(key: Int, tonality: Int, octaves: Int, style: Int ) {
         let scale = Scale(key: key, tonality: tonality, octaves: octaves, style: style)

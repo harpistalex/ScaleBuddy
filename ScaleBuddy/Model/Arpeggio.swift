@@ -7,28 +7,30 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Arpeggio {
+class Arpeggio: Object {
     
-    let keySignature : Int
-    let keyTonality : Int
-    let numberOfOctaves : Int
-    let handsStyle : Int
-    let chordInversion : Int
-    let chordType : Int
+    @objc dynamic var keySignature : Int = 0
+    @objc dynamic var keyTonality : Int = 0
+    @objc dynamic var numberOfOctaves : Int = 0
+    @objc dynamic var handsStyle : Int = 0
+    @objc dynamic var chordInversion : Int = 0
+    @objc dynamic var chordType : Int = 0
     
-    let practised : Bool = false
-    let included : Bool = true
+    @objc dynamic var practised : Bool = false //remove this
+    @objc dynamic var included : Bool = true
     
     
-    init(key: Int, tonality: Int, octaves: Int, style: Int, inversion: Int, type: Int) {
-        keySignature = key
-        keyTonality = tonality
-        numberOfOctaves = octaves
-        handsStyle = style
-        chordInversion = inversion
-        chordType = type
+    convenience init(key: Int, tonality: Int, octaves: Int, style: Int, inversion: Int, type: Int) {
+        self.init()
+        self.keySignature = key
+        self.keyTonality = tonality
+        self.numberOfOctaves = octaves
+        self.handsStyle = style
+        self.chordInversion = inversion
+        self.chordType = type
         
     }
-    
+
 }

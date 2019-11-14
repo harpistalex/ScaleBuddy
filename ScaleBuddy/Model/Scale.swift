@@ -7,23 +7,25 @@
 //
 
 import Foundation
+import RealmSwift
+
+class Scale: Object {
+    
+    @objc dynamic var keySignature : Int = 0
+    @objc dynamic var keyTonality : Int = 0
+    @objc dynamic var numberOfOctaves : Int = 0
+    @objc dynamic var handsStyle : Int = 0
+    
+    @objc dynamic var practised : Bool = false //remove this
+    @objc dynamic var included : Bool = true
 
 
-class Scale {
-    
-    let keySignature : Int
-    let keyTonality : Int
-    let numberOfOctaves : Int
-    let handsStyle : Int
-    
-    let practised : Bool = false
-    let included : Bool = true
-    
-    init(key: Int, tonality: Int, octaves: Int, style: Int) {
-        keySignature = key
-        keyTonality = tonality
-        numberOfOctaves = octaves
-        handsStyle = style
+    convenience init(key: Int, tonality: Int, octaves: Int, style: Int) {
+        self.init()
+        self.keySignature = key
+        self.keyTonality = tonality
+        self.numberOfOctaves = octaves
+        self.handsStyle = style
     }
     
 }
