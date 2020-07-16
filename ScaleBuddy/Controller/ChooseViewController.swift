@@ -25,17 +25,7 @@ class ChooseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        chooseScaleButton.layer.borderWidth = 1
-        chooseScaleButton.layer.borderColor = UIColor.black.cgColor
-        
-        chooseArpeggioButton.layer.borderWidth = 1
-        chooseArpeggioButton.layer.borderColor = UIColor.black.cgColor
-        
-        let insets = UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10)
-        scaleOrArpeggio.layoutMargins = insets
 
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,11 +36,11 @@ class ChooseViewController: UIViewController {
         
         if defaultsGrade != 0 {
             defaultsGradeNumber = defaultsGrade
-            
-            //TODO: Hide buttons in prepare for segue in other VCs? Or make them so they don't actually do anything and don't hide at all...
+    
             chooseScaleButton.isHidden = false
             chooseArpeggioButton.isHidden = false
             scaleOrArpeggio.text = "Choose a scale or arpeggio"
+            self.title = "Grade \(defaultsGradeNumber)"
             
             loadScalesAndArpeggios()
             
@@ -61,9 +51,7 @@ class ChooseViewController: UIViewController {
             scaleOrArpeggio.text = "Please select a grade and choose your scales and arpeggios"
         }
     }
-    
-    //TODO: check about scalesToUse and arpeggiosToUse appending scales over and over.
-    //TODO: Perhaps put this in KeySignatures TVC? Perhaps shuffle it at the start?
+
 
     func loadScalesAndArpeggios() {
 
@@ -122,6 +110,60 @@ class ChooseViewController: UIViewController {
 
     }
     
+    func generateChosenScaleLabel(key: Int, tonality: Int, style: Int, octaves: Int, chordType: Int?, inversion: Int?) -> NSMutableAttributedString {
+        
+        let returnText = NSMutableAttributedString()
+        
+        let font1 = UIFont(name: "Avenir-Heavy", size: 30)!
+        let font2 = UIFont(name: "Avenir", size: 15)!
+
+        
+        let keyAttStr = NSMutableAttributedString(string: "\(syllabus.allKeySignatures[key]) ", attributes: [NSAttributedString.Key.font: font1])
+        let tonalityAttStr = NSMutableAttributedString(string:"\(syllabus.allTonalities[tonality])\n", attributes: [NSAttributedString.Key.font: font1])
+        let styleAttStr = NSMutableAttributedString(string: "\(syllabus.allStyles[style])\n")
+        let octavesAttStr = NSMutableAttributedString(string: syllabus.allOctaves[octaves], attributes: [NSAttributedString.Key.font: font2])
+        
+        if (chordType != nil) && (inversion != nil) {
+            
+            let chordTypeAttStr = NSMutableAttributedString(string: "\(syllabus.allTypes[chordType!])\n")
+            let inversionAttStr = NSMutableAttributedString(string: "\(syllabus.allInversions[inversion!])\n")
+            
+            returnText.append(keyAttStr)
+            returnText.append(tonalityAttStr)
+            returnText.append(chordTypeAttStr)
+            returnText.append(inversionAttStr)
+            returnText.append(styleAttStr)
+            returnText.append(octavesAttStr)
+            
+            
+        } else {
+            
+            returnText.append(keyAttStr)
+            returnText.append(tonalityAttStr)
+            returnText.append(styleAttStr)
+            returnText.append(octavesAttStr)
+            
+        }
+        
+        return returnText
+        
+        //TODO:
+        //Check whether scale or arpeggio and create variables for each.
+        //Change all parameters to attributed strings.
+        //returnString will either be scale or arpeggio variable.
+        //Make adding attributes an extension?
+        
+        ///////////////////////////////////// TEMP:
+//        if (chordType != nil) && (inversion != nil) {
+//            returnString = "\(syllabus.allKeySignatures[key]) \(syllabus.allTonalities[tonality]) \(syllabus.allTypes[chordType!]) \(syllabus.allStyles[style]) \(syllabus.allInversions[inversion!]) \(syllabus.allOctaves[octaves])"
+//        } else {
+//            returnString = "\(syllabus.allKeySignatures[key]) \(syllabus.allTonalities[tonality]) \(syllabus.allStyles[style]) \(syllabus.allOctaves[octaves])"
+//        }
+//        /////////////////////////////////////
+//        return returnString
+        
+    }
+    
     
     @IBAction func chooseScalePressed() {
         
@@ -142,8 +184,12 @@ class ChooseViewController: UIViewController {
         }
     
         let chosenScale = grade.scaleList[grade.scalesToUse[index]]
+        
+        
+        scaleOrArpeggio.attributedText = (generateChosenScaleLabel(key: chosenScale.keySignature, tonality: chosenScale.keyTonality, style: chosenScale.handsStyle, octaves: chosenScale.numberOfOctaves, chordType: nil, inversion: nil))
 
-        scaleOrArpeggio.text = "\(syllabus.allKeySignatures[chosenScale.keySignature]) \(syllabus.allTonalities[chosenScale.keyTonality]) \(syllabus.allStyles[chosenScale.handsStyle]) \(syllabus.allOctaves[chosenScale.numberOfOctaves])"
+//        scaleOrArpeggio.text = "\(syllabus.allKeySignatures[chosenScale.keySignature]) \(syllabus.allTonalities[chosenScale.keyTonality] ) \(syllabus.allStyles[chosenScale.handsStyle]) \(syllabus.allOctaves[chosenScale.numberOfOctaves])"
+        
         
         if index >= grade.scalesToUse.count - 1 {
             index = 0
@@ -174,7 +220,11 @@ class ChooseViewController: UIViewController {
         }
         let chosenArpeggio = grade.arpeggioList[grade.arpeggiosToUse[index]]
         
-        scaleOrArpeggio.text = "\(syllabus.allKeySignatures[chosenArpeggio.keySignature]) \(syllabus.allTonalities[chosenArpeggio.keyTonality]) \(syllabus.allTypes[chosenArpeggio.chordType]) \(syllabus.allStyles[chosenArpeggio.handsStyle]) \(syllabus.allInversions[chosenArpeggio.chordInversion]) \(syllabus.allOctaves[chosenArpeggio.numberOfOctaves])"
+        print("generateChosenScaleLabel: \(generateChosenScaleLabel(key: chosenArpeggio.keySignature, tonality: chosenArpeggio.keyTonality, style: chosenArpeggio.handsStyle, octaves: chosenArpeggio.numberOfOctaves, chordType: chosenArpeggio.chordType, inversion: chosenArpeggio.chordInversion))")
+        
+//        scaleOrArpeggio.text = "\(syllabus.allKeySignatures[chosenArpeggio.keySignature]) \(syllabus.allTonalities[chosenArpeggio.keyTonality]) \(syllabus.allTypes[chosenArpeggio.chordType]) \(syllabus.allStyles[chosenArpeggio.handsStyle]) \(syllabus.allInversions[chosenArpeggio.chordInversion]) \(syllabus.allOctaves[chosenArpeggio.numberOfOctaves])"
+        
+        scaleOrArpeggio.attributedText = generateChosenScaleLabel(key: chosenArpeggio.keySignature, tonality: chosenArpeggio.keyTonality, style: chosenArpeggio.handsStyle, octaves: chosenArpeggio.numberOfOctaves, chordType: chosenArpeggio.chordType, inversion: chosenArpeggio.chordInversion)
         
         if index >= grade.arpeggiosToUse.count - 1 {
             index = 0
@@ -186,7 +236,20 @@ class ChooseViewController: UIViewController {
 
         
     }
-
+    
+    /////////////////////////////////
+    @IBAction func testButtonPressed(_ sender: Any) {
+        
+        let number = Int.random(in: 0..<9)
+        let text = syllabus.allStyles[number]
+        let font = UIFont(name: "Avenir-Heavy", size: 24)
+        let attText = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: font!])
+        
+        scaleOrArpeggio.attributedText = attText
+        
+    }
+    /////////////////////////////////
 
 }
+
 

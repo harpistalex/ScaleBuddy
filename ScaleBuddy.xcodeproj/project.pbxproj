@@ -21,6 +21,7 @@
 		2F8A068422EF415C00285A79 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068322EF415C00285A79 /* Grade.swift */; };
 		2F8A068622F04C5F00285A79 /* GradeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068522F04C5F00285A79 /* GradeTableViewController.swift */; };
 		2F8A068822F075AF00285A79 /* KeySignaturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A068722F075AF00285A79 /* KeySignaturesTableViewController.swift */; };
+		2FAB044923D0BADE0020E434 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAB044823D0BADE0020E434 /* BorderedButton.swift */; };
 		A1B2F3F26F376757262C8976 /* Pods_ScaleBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C474C5B1B0870191DA9F679E /* Pods_ScaleBuddy.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		2F8A068322EF415C00285A79 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		2F8A068522F04C5F00285A79 /* GradeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeTableViewController.swift; sourceTree = "<group>"; };
 		2F8A068722F075AF00285A79 /* KeySignaturesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySignaturesTableViewController.swift; sourceTree = "<group>"; };
+		2FAB044823D0BADE0020E434 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		C474C5B1B0870191DA9F679E /* Pods_ScaleBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScaleBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 			children = (
 				2F7C1BFB22CE082B009AB857 /* Main.storyboard */,
 				2F7C1C0022CE082D009AB857 /* LaunchScreen.storyboard */,
+				2FAB044823D0BADE0020E434 /* BorderedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,22 +226,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ScaleBuddy/Pods-ScaleBuddy-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ScaleBuddy/Pods-ScaleBuddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-ScaleBuddy/Pods-ScaleBuddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScaleBuddy/Pods-ScaleBuddy-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScaleBuddy/Pods-ScaleBuddy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		80F74335F05E9B851C1CBC12 /* [CP] Check Pods Manifest.lock */ = {
@@ -276,6 +272,7 @@
 				2F8A067E22EF409300285A79 /* Scale.swift in Sources */,
 				2F7C1BF822CE082B009AB857 /* AppDelegate.swift in Sources */,
 				2F7127BA2345F26C00F6D7CC /* ArpeggioStyleTableViewController.swift in Sources */,
+				2FAB044923D0BADE0020E434 /* BorderedButton.swift in Sources */,
 				2F8A068822F075AF00285A79 /* KeySignaturesTableViewController.swift in Sources */,
 				2F8A068222EF413C00285A79 /* Syllabus.swift in Sources */,
 				2F8A068022EF40F100285A79 /* Arpeggio.swift in Sources */,
